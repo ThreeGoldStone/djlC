@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidHardWareTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="camera_1">Mian/CameraPhoto</string>
+    <string name="G_Sensor_1">Mian/Sensor</string>
+    <string name="Bluetooth">Main/Bluetooth</string>
+    <string name="WifiP2P">Main/Bluetooth/datail</string>
+
+</resources>

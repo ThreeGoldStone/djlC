@@ -1,13 +1,13 @@
 package com.example.djlandroidexample;
 
-import com.android.volley.djlpatch.SimpleVolleyListener;
-import com.djl.netWork.NetWork;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.android.volley.djlpatch.SimpleVolleyListener;
+import com.djl.netWork.NetWork;
 
 public class MainActivity extends Activity {
 	private static final int _2 = 2;

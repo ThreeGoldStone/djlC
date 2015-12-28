@@ -1,11 +1,8 @@
 package com.djl.app;
 
-import java.io.Closeable;
-import java.io.IOException;
+import android.app.Application;
 
 import com.djl.util.activity.KJActivityManager;
-
-import android.app.Application;
 
 /**
  * @author DJL E-mail:

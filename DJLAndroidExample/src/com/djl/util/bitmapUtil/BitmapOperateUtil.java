@@ -17,8 +17,6 @@ package com.djl.util.bitmapUtil;
 
 import java.io.IOException;
 
-import com.djl.util.androidUtil.SystemTool;
-
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -31,6 +29,8 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.djl.util.androidUtil.SystemTool;
 
 /**
  * 对bitmap特殊处理的工具类<br>

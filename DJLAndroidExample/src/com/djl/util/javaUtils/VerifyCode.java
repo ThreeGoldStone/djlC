@@ -3,10 +3,10 @@ package com.djl.util.javaUtils;
 import java.util.Random;
 
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Bitmap.Config;
 
 /**
  * 生产图片验证码

@@ -1,16 +1,16 @@
 package com.djl.widget;
 
 import android.view.View;
-import android.widget.CompoundButton;
+import android.widget.Checkable;
 
-public class LabelBean {
-	public CompoundButton LabelView;
+public class LabelBean implements Checkable {
+	public View LabelView;
 	public View PageView;
 	public int index;
 	private OnPageShowListener mOPSLintener;
+	private boolean isChecked;
 
-	public LabelBean(CompoundButton labelView, View pageView, int index,
-			OnPageShowListener mOPSLintener) {
+	public LabelBean(View labelView, View pageView, int index, OnPageShowListener mOPSLintener) {
 		LabelView = labelView;
 		PageView = pageView;
 		this.index = index;
@@ -30,7 +30,19 @@ public class LabelBean {
 		/** 页面显示出来 */
 		void onPageShow(LabelBean labelBean);
 
-//		/** 页面初始化 */
-//		void onPageInit(LabelBean labelBean);
+	}
+
+	@Override
+	public void setChecked(boolean checked) {
+		this.isChecked = checked;
+	}
+
+	@Override
+	public boolean isChecked() {
+		return isChecked;
+	}
+
+	@Override
+	public void toggle() {
 	}
 }

@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.djl.util.activity.SimpleFragment;
 import com.djl.util.androidUtil.DJLUtils;
-import com.djl.util.view.annotation.Click;
-import com.djl.util.view.annotation.VID;
 
 /**
  * @author DJL E-mail:

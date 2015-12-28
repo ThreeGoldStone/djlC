@@ -15,11 +15,11 @@
  */
 package com.djl.util.bitmapUtil;
 
-import com.djl.util.androidUtil.MemoryLruCache;
-import com.djl.util.androidUtil.SystemTool;
-
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
+
+import com.djl.util.androidUtil.MemoryLruCache;
+import com.djl.util.androidUtil.SystemTool;
 
 /**
  * 使用lru算法的Bitmap内存缓存池<br>

@@ -2,10 +2,10 @@ package com.djl.util.javaUtils;
 
 import java.io.UnsupportedEncodingException;
 
-import com.djl.util.androidUtil.DJLUtils;
-
 import android.util.Base64;
 import android.util.Log;
+
+import com.djl.util.androidUtil.DJLUtils;
 
 /**
  * 

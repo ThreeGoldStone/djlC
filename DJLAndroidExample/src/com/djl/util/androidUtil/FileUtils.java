@@ -30,10 +30,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 
-import com.djl.util.bitmapUtil.BitmapCreate;
-import com.djl.util.bitmapUtil.BitmapHelper;
-import com.djl.util.bitmapUtil.BitmapOperateUtil;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -44,6 +40,10 @@ import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+
+import com.djl.util.bitmapUtil.BitmapCreate;
+import com.djl.util.bitmapUtil.BitmapHelper;
+import com.djl.util.bitmapUtil.BitmapOperateUtil;
 
 /**
  * 文件与流处理工具类<br>

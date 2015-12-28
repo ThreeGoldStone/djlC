@@ -5,11 +5,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TextView;
 
-import com.djl.util.activity.SimpleFragmentActivity;
+import com.djl.util.activity.SimpleFragmentInjectActivity;
 import com.djl.util.androidUtil.DJLUtils;
-import com.djl.util.view.annotation.Click;
-import com.djl.util.view.annotation.ContentView;
-import com.djl.util.view.annotation.VID;
 
 /**
  * 调用SimpleActivity 的例子
@@ -21,7 +18,7 @@ import com.djl.util.view.annotation.VID;
  * @since
  */
 //@ContentView(R.layout.activity_main)
-public class ViewActivity extends SimpleFragmentActivity {
+public class ViewActivity extends SimpleFragmentInjectActivity {
 //	@Click
 //	@VID(R.id.tv)
 	TextView mtv;

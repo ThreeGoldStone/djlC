@@ -17,12 +17,12 @@ package com.djl.util.bitmapUtil;
 
 import java.io.InputStream;
 
-import com.djl.util.androidUtil.FileUtils;
-
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
+
+import com.djl.util.androidUtil.FileUtils;
 
 /**
  * 不会发生OOM的 BitmapFactory<br>

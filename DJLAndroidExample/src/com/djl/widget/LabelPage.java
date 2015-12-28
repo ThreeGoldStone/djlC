@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
@@ -25,10 +24,12 @@ public class LabelPage implements OnClickListener {
 	private int currentCheck;
 	private ViewPager mPager;
 	private ViewGroup mLayout;
-/**
- * initWithViewPager
- * @param pager
- */
+
+	/**
+	 * initWithViewPager
+	 * 
+	 * @param pager
+	 */
 	public LabelPage(ViewPager pager) {
 		this.mPager = pager;
 	}
@@ -57,10 +58,9 @@ public class LabelPage implements OnClickListener {
 
 				@Override
 				public void onPageSelected(int position) {
-					CompoundButton cb = labelBeans.get(position).LabelView;
-					if (!cb.isChecked()) {
-						cb.setChecked(true);
-						labelBeans.get(position).LabelView.setChecked(false);
+					if (!labelBeans.get(position).isChecked()) {
+						labelBeans.get(position).setChecked(true);
+						labelBeans.get(position).setChecked(false);
 						labelBeans.get(position).getmOPSLintener()
 								.onPageShow(labelBeans.get(position));
 						currentCheck = position;
@@ -92,9 +92,9 @@ public class LabelPage implements OnClickListener {
 
 	public void setCurrentCheck(int CheckId) {
 		// TODO
-		if (!labelBeans.get(CheckId).LabelView.isChecked()) {
-			labelBeans.get(CheckId).LabelView.setChecked(true);
-			labelBeans.get(currentCheck).LabelView.setChecked(false);
+		if (!labelBeans.get(CheckId).isChecked()) {
+			labelBeans.get(CheckId).setChecked(true);
+			labelBeans.get(currentCheck).setChecked(false);
 		}
 		if (mPager != null) {
 			mPager.setCurrentItem(currentCheck);
@@ -105,12 +105,12 @@ public class LabelPage implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		CompoundButton cb = (CompoundButton) v;
+		View cb = (View) v;
 		int checkIndex = (int) cb.getTag();
-		if (!cb.isChecked()) {
-			cb.setChecked(true);
-			labelBeans.get(currentCheck).LabelView.setChecked(false);
-			setCurrentCheck(checkIndex);
-		}
+		// if (!cb.isChecked()) {
+		// cb.setChecked(true); //TODO
+		// labelBeans.get(currentCheck).LabelView.setChecked(false);
+		// setCurrentCheck(checkIndex);
+		// }
 	}
 }

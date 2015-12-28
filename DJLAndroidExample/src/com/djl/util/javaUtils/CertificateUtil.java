@@ -1,6 +1,5 @@
 package com.djl.util.javaUtils;
 
-import android.annotation.SuppressLint;
 import java.io.FileInputStream;
 import java.security.InvalidKeyException;
 import java.security.KeyStore;
@@ -16,6 +15,8 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+
+import android.annotation.SuppressLint;
 
 /**
  * RAS加密解密 证书组件

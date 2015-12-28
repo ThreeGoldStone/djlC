@@ -1,0 +1,7 @@
+package com.game.commen;
+
+public enum ToDo {
+	µ¯¶Ô»°¿ò,
+	ÇÐ»»³¡¾°,
+	Åö×²ÉËº¦
+}

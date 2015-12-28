@@ -1,0 +1,228 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:misc="http://schemas.android.com/apk/res/com.example.gametest1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000" >
+
+    <LinearLayout
+        android:id="@+id/mt"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/tool_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button_shizhi" />
+
+    <Button
+        android:id="@+id/tool_jineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="140dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/button_jineng" />
+    
+    <Button
+        android:id="@+id/tool_liao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="80dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/js_liaobutton" />
+
+    
+    <LinearLayout
+        android:id="@+id/ll_jineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dip"
+        android:layout_marginLeft="10dip"
+        android:visibility="gone" 
+         >
+
+        <Button
+            android:id="@+id/jineng_feijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/js_kuangkuang"
+            android:textColor="#FFF" 
+            android:text="飞剑"/>
+        <Button
+            android:id="@+id/jineng_feijian2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/js_kuangkuang"
+            android:textColor="#FFF"
+            android:text="飞剑2"
+             />
+        <Button
+            android:id="@+id/jineng_feijian3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/js_kuangkuang"
+            android:textColor="#FFF"
+            android:text="飞剑3"
+             />
+        <Button
+            android:id="@+id/jineng_feijian4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/js_kuangkuang"
+            android:textColor="#FFF"
+            android:text="飞剑4"
+             />
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll_liaotian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:visibility="gone"
+         >
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/js_inputnamebd"
+            android:hint="请输入聊天内容!"
+            android:paddingLeft="5dip"
+            android:textColor="#FFF"
+            android:textColorHint="#CCCCCC"
+            android:textSize="14dip" />
+
+        <Button
+            android:id="@+id/bt_fasong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/button_liao"
+            android:textColor="#FFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tool"
+        android:layout_width="500dip"
+        android:layout_height="250dip"
+        android:background="@drawable/toolbd"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dip"
+            android:orientation="horizontal"
+            android:paddingLeft="10dip" >
+
+            <Button
+                android:id="@+id/bt_moshi1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="默认模式"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/bt_moshi2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="手势模式"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/bt_moshi3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="点击模式"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/bt_moshi4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="按键模式"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/bt_moshi5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="A*模式"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="10dip" >
+
+            <Button
+                android:id="@+id/bt_gamestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="装备武器"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/addnpc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="添加NPC"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/allnpc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:background="#88000000"
+                android:padding="5dip"
+                android:text="统计NPC"
+                android:textColor="#FFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

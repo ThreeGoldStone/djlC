@@ -1655,7 +1655,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b002e;
         public static final int action_mode_bar_stub=0x7f0b002d;
         public static final int action_mode_close_button=0x7f0b0020;
-        public static final int action_settings=0x7f0b0046;
+        public static final int action_settings=0x7f0b0047;
         public static final int activity_chooser_view_content=0x7f0b0021;
         public static final int always=0x7f0b0014;
         public static final int beginning=0x7f0b001b;
@@ -1708,6 +1708,7 @@ containing a value of this type.
         public static final int submit_area=0x7f0b003c;
         public static final int tabMode=0x7f0b000c;
         public static final int title=0x7f0b0027;
+        public static final int tv=0x7f0b0046;
         public static final int up=0x7f0b0001;
         public static final int useLogo=0x7f0b0013;
         public static final int vp=0x7f0b003f;
@@ -1764,7 +1765,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int layout_item=0x7f030018;
+        public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

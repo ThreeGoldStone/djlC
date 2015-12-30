@@ -6,9 +6,7 @@ import android.widget.TextView;
 
 import com.djl.util.activity.SimpleFragmentActivity;
 import com.djl.util.androidUtil.DJLUtils;
-import com.djl.widget.LabelBean;
-import com.djl.widget.LabelBean.OnPageShowListener;
-import com.djl.widget.LabelPage;
+import com.example.demo_djlviewpager.LabelBean.OnPageShowListener;
 
 public class MainActivity extends SimpleFragmentActivity implements OnPageShowListener {
 
@@ -33,12 +31,12 @@ public class MainActivity extends SimpleFragmentActivity implements OnPageShowLi
 	public void initView() {
 		LabelPage lp = new LabelPage(getViewPager(R.id.vp));
 		for (int i = 0; i < lbls.length; i++) {
-			TextView pageView = new TextView(this);
-			pageView.setText(contents[i]);
-			// lp.add(new LabelBean((LableView) getView(lbls[i]), pageView, i,
-			// this));
+			TextView pageView = (TextView) View.inflate(this, R.layout.layout_item, null);
+			pageView.setText("ÎÒÊÇµÚ" + i);
+			lp.add(new LabelBean(getView(lbls[i]), pageView, this));
 		}
 		lp.init(this);
+		lp.setCurrentShow(0);
 	}
 
 	@Override
@@ -48,7 +46,22 @@ public class MainActivity extends SimpleFragmentActivity implements OnPageShowLi
 
 	@Override
 	public void onPageShow(LabelBean labelBean) {
-		DJLUtils.log("onPageShow>>>---" + labelBean.index);
+		labelBean.mBarView.setBackgroundResource(R.drawable.ic_launcher);
+		for (int i = 0; i < lbls.length; i++) {
+			if (lbls[i] == labelBean.mBarView.getId()) {
+				DJLUtils.log("onPageShow>>>---" + i);
+			}
+		}
+	}
+
+	@Override
+	public void onPageNotShow(LabelBean labelBean) {
+		labelBean.mBarView.setBackgroundColor(0xff00ff00);
+		for (int i = 0; i < lbls.length; i++) {
+			if (lbls[i] == labelBean.mBarView.getId()) {
+				DJLUtils.log("onPageNotShow>>>---" + i);
+			}
+		}
 	}
 
 }

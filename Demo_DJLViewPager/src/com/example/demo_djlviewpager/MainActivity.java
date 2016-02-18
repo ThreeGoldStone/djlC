@@ -11,11 +11,10 @@ import com.example.demo_djlviewpager.LabelBean.OnPageShowListener;
 public class MainActivity extends SimpleFragmentActivity implements OnPageShowListener {
 
 	public int lbls[] = { R.id.cb0, R.id.cb1, R.id.cb2, R.id.cb3, R.id.cb4 };
-	private String contents[] = { "0", "1", "2", "3", "4" };
 
 	@Override
 	public void onClick(View v) {
-
+		DJLUtils.toastS(this, v.getTag().toString());
 	}
 
 	@Override
@@ -45,18 +44,22 @@ public class MainActivity extends SimpleFragmentActivity implements OnPageShowLi
 	}
 
 	@Override
-	public void onPageShow(LabelBean labelBean) {
+	public void onPageShow(LabelBean labelBean, Object[] mCaches) {
 		labelBean.mBarView.setBackgroundResource(R.drawable.ic_launcher);
+		String j = "";
 		for (int i = 0; i < lbls.length; i++) {
 			if (lbls[i] == labelBean.mBarView.getId()) {
+				j = "" + i;
 				DJLUtils.log("onPageShow>>>---" + i);
 			}
 		}
+		labelBean.mPageView.setTag(j);
+		labelBean.mPageView.setOnClickListener(this);
 	}
 
 	@Override
-	public void onPageNotShow(LabelBean labelBean) {
-		labelBean.mBarView.setBackgroundColor(0xff00ff00);
+	public void onPageNotShow(LabelBean labelBean, Object[] mCaches) {
+		labelBean.mBarView.setBackgroundColor(0xff332054);
 		for (int i = 0; i < lbls.length; i++) {
 			if (lbls[i] == labelBean.mBarView.getId()) {
 				DJLUtils.log("onPageNotShow>>>---" + i);

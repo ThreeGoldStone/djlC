@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class ClearComment {
 
 	/** ¸ùÄ¿Â¼ */
-	public static String rootDir = "E:\\Android_WorkSpace_1\\HHY2Test2\\src\\com";
+	public static String rootDir = "C:\\Users\\Administrator\\Desktop\\a";
 
 	// "D:\\testdir
 	// D:\\workspace\\proj_map\\src\\com

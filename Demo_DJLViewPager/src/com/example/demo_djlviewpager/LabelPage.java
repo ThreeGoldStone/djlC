@@ -44,11 +44,22 @@ public class LabelPage implements OnClickListener {
 
 	public void init(Activity activity) {
 		initViewPager();
+		initFrameLayout();
 		// TODO
 		for (LabelBean lb : getLabelBeans()) {
 			lb.mBarView.setClickable(true);
 			lb.mBarView.setOnClickListener(this);
 		}
+	}
+
+	private void initFrameLayout() {
+		if (mLayout != null) {
+			for (LabelBean lb : getLabelBeans()) {
+				mLayout.addView(lb.mPageView);
+			}
+
+		}
+
 	}
 
 	private void initViewPager() {
@@ -99,9 +110,17 @@ public class LabelPage implements OnClickListener {
 	 * @param index
 	 */
 	public void setCurrentShow(int index) {
-		for (int i = 0; i < getLabelBeans().size(); i++) {
+		// 设置Pager滚动到指定页
+		if (mPager != null) {
 			mPager.setCurrentItem(index);
-			getLabelBeans().get(i).setShow(index == i);
+		}
+		// 设置FrameLayout的子View显示对应的页
+		for (int i = 0; i < getLabelBeans().size(); i++) {
+			LabelBean labelBean = getLabelBeans().get(i);
+			if (mLayout != null) {
+//				labelBean.mPageView.setVisibility(View.V)
+			}
+			labelBean.setShow(index == i);
 		}
 		this.mCurrentShowIndex = index;
 	}

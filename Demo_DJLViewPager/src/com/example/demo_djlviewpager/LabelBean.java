@@ -1,6 +1,7 @@
 package com.example.demo_djlviewpager;
 
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.view.View;
 //private int mShowTextColor = -1;
 // private int mNormalTextColor = -1;
@@ -34,13 +35,22 @@ import android.view.View;
 public class LabelBean {
 	public View mBarView;
 	public View mPageView;
+	public Fragment mFragment;
 	private OnPageShowListener mOPSLintener;
 	private boolean mIsShow;
+	private Object[] mCaches;
 
 	public LabelBean(@NonNull View labelView, @NonNull View pageView,
 			@NonNull OnPageShowListener mOPSLintener) {
 		mBarView = labelView;
 		mPageView = pageView;
+		this.mOPSLintener = mOPSLintener;
+	}
+
+	public LabelBean(@NonNull View labelView, @NonNull Fragment fragment,
+			@NonNull OnPageShowListener mOPSLintener) {
+		mBarView = labelView;
+		this.mFragment = fragment;
 		this.mOPSLintener = mOPSLintener;
 	}
 
@@ -58,9 +68,9 @@ public class LabelBean {
 		// 显示状态不同时再进入
 		if (mIsShow != isShow) {
 			if (isShow) {
-				mOPSLintener.onPageShow(this);
+				mOPSLintener.onPageShow(this, mCaches);
 			} else {
-				mOPSLintener.onPageNotShow(this);
+				mOPSLintener.onPageNotShow(this, mCaches);
 			}
 			mIsShow = isShow;
 		}
@@ -73,12 +83,23 @@ public class LabelBean {
 
 	/** 页面显示出来的回调 */
 	public static interface OnPageShowListener {
-		/** 页面显示出来 */
-		void onPageShow(LabelBean labelBean);
+		/**
+		 * 页面显示出来
+		 * 
+		 * @param mCaches
+		 */
+		void onPageShow(LabelBean labelBean, Object[] caches);
 
-		/** 页面从显示变不显示 */
-		void onPageNotShow(LabelBean labelBean);
+		/**
+		 * 页面从显示变不显示
+		 * 
+		 * @param mCaches
+		 */
+		void onPageNotShow(LabelBean labelBean, Object[] caches);
 
 	}
 
+	public void setCacheData(Object... caches) {
+		this.mCaches = caches;
+	}
 }

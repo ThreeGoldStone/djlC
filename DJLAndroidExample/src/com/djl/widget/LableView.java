@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class LableView extends TextView implements Checkable {
 
 	private boolean checked;
+
 	public LableView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}

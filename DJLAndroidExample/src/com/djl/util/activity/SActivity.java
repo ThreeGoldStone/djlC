@@ -25,7 +25,12 @@ public abstract class SActivity extends Activity {
 	}
 
 	public SimpleApplication getApp() {
-		return (SimpleApplication) getApplication();
+		SimpleApplication app = null;
+		try {
+			app = (SimpleApplication) getApplication();
+		} catch (Exception e) {
+		}
+		return app;
 	}
 
 	public void finish_() {

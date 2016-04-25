@@ -32,6 +32,17 @@ import javax.crypto.spec.DESKeySpec;
  * @version 1.1
  */
 public final class CipherUtils {
+	public static void main(String[] args) {
+		String s = "123";
+		String md5 = md5(s);
+		System.out.println(md5);
+		byte[] hexString2Bytes = HexString2Bytes(md5);
+		// System.out.println(hexString2Bytes);
+		// byte[] arrayOfByte2 = localMessageDigest.digest(arrayOfByte1);
+		// Base64.encodeToString(arrayOfByte2, Base64.DEFAULT).trim();
+		System.out.println(new String(java.util.Base64.getEncoder().encode(hexString2Bytes)));
+		System.out.println(UNIAPMd5(s));
+	}
 
 	/**
 	 * MD5加密
@@ -54,6 +65,42 @@ public final class CipherUtils {
 		}
 		return hex.toString();
 	}
+
+	public static String UNIAPMd5(String content) {
+		String paramString2 = "md5";
+		try {
+			MessageDigest localMessageDigest = MessageDigest.getInstance("md5");
+			localMessageDigest.reset();
+			byte[] arrayOfByte1 = content.getBytes();
+			byte[] arrayOfByte2 = localMessageDigest.digest(arrayOfByte1);
+			// Base64.encodeToString(arrayOfByte2, Base64.DEFAULT).trim();
+			return new String(java.util.Base64.getEncoder().encode(arrayOfByte2));
+		} catch (NoSuchAlgorithmException localNoSuchAlgorithmException) {
+			localNoSuchAlgorithmException.printStackTrace();
+		}
+		return content;
+	}
+
+	// 从十六进制字符串到字节数组转换
+	public static byte[] HexString2Bytes(String hexstr) {
+		byte[] b = new byte[hexstr.length() / 2];
+		int j = 0;
+		for (int i = 0; i < b.length; i++) {
+			char c0 = hexstr.charAt(j++);
+			char c1 = hexstr.charAt(j++);
+			b[i] = (byte) ((parse(c0) << 4) | parse(c1));
+		}
+		return b;
+	}
+
+	private static int parse(char c) {
+		if (c >= 'a')
+			return (c - 'a' + 10) & 0x0f;
+		if (c >= 'A')
+			return (c - 'A' + 10) & 0x0f;
+		return (c - '0') & 0x0f;
+	}
+
 	/**
 	 * SHA1加密
 	 */
@@ -66,7 +113,7 @@ public final class CipherUtils {
 		} catch (UnsupportedEncodingException e) {
 			// throw new KJException("Huh, UTF-8 should be supported?", e);
 		}
-		
+
 		StringBuilder hex = new StringBuilder(hash.length * 2);
 		for (byte b : hash) {
 			if ((b & 0xFF) < 0x10)
@@ -75,22 +122,24 @@ public final class CipherUtils {
 		}
 		return hex.toString();
 	}
-//	/**
-//	 * Takes the raw bytes from the digest and formats them correct.
-//	 *
-//	 * @param bytes
-//	 *            the raw bytes from the digest.
-//	 * @return the formatted bytes.
-//	 */
-//	private static String getFormattedText(byte[] bytes) {
-//		int len = bytes.length;
-//		StringBuilder buf = new StringBuilder(len * 2);
-//		// 把密文转换成十六进制的字符串形式
-//		for (int j = 0; j < len; j++) { 			buf.append(HEX_DIGITS[(bytes[j] &gt;&gt; 4) &amp; 0x0f]);
-//			buf.append(HEX_DIGITS[bytes[j] &amp; 0x0f]);
-//		}
-//		return buf.toString();
-//	}
+
+	// /**
+	// * Takes the raw bytes from the digest and formats them correct.
+	// *
+	// * @param bytes
+	// * the raw bytes from the digest.
+	// * @return the formatted bytes.
+	// */
+	// private static String getFormattedText(byte[] bytes) {
+	// int len = bytes.length;
+	// StringBuilder buf = new StringBuilder(len * 2);
+	// // 把密文转换成十六进制的字符串形式
+	// for (int j = 0; j < len; j++) { buf.append(HEX_DIGITS[(bytes[j] &gt;&gt;
+	// 4) &amp; 0x0f]);
+	// buf.append(HEX_DIGITS[bytes[j] &amp; 0x0f]);
+	// }
+	// return buf.toString();
+	// }
 	/**
 	 * 返回可逆算法DES的密钥
 	 * 
@@ -104,7 +153,5 @@ public final class CipherUtils {
 		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
 		return keyFactory.generateSecret(des);
 	}
-
-	
 
 }

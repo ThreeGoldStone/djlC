@@ -52,19 +52,19 @@ public class FullPXMacher2 {
 	public static void main(String[] args) {
 		dimensPXInfos = new ArrayList<>();
 		// 项目路径
-		String projectPath = "E:\\Android_WorkSpace_1\\HHY2";
-		File layouts = new File(projectPath + "\\res\\layout");
+		String projectPath = "E:\\AndroidStudioWorkSpace\\shangshihuihai\\ShangShiHuiHai\\app\\src\\main\\res";
+		File layouts = new File(projectPath + "\\layout");
 		File[] ls = layouts.listFiles();
 		for (File layout : ls) {
 			// 遍历解析抽取
 			exchange(layout);
 		}
 		isStyle = true;
-		File style = new File(projectPath + "\\res\\values\\styles.xml");
+		File style = new File(projectPath + "\\values\\styles.xml");
 		exchange(style);
 		isStyle = false;
 		// File dimens = new File(projectPath + "\\res\\values\\dimens.xml");
-		File dimens = new File(projectPath + "\\res\\values-1280x720\\dimens.xml");
+		File dimens = new File(projectPath + "\\values-1280x720\\dimens.xml");
 		if (!dimens.getParentFile().exists()) {
 			dimens.getParentFile().mkdir();
 		}

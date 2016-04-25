@@ -39,7 +39,7 @@ public class FullPXMacher3 {
 	public static Pattern patternSP = Pattern.compile("[0-9]*sp");
 	public static Pattern patternDIP = Pattern.compile("[0-9]*dip");
 	public static Pattern patternPX = Pattern.compile("[0-9]*px");
-	public static String projectPath = "E:\\Android_WorkSpace_1\\HHY2";
+	public static String projectPath = "E:\\AndroidStudioWorkSpace\\shangshihuihai\\ShangShiHuiHai\\app\\src\\main";
 	private static String Template = "<dimen name=\"{0}\">{1}px</dimen>\n";
 	public static String rootPath = projectPath + "\\res\\values-{0}x{1}\\";
 	public static String rootPath2 = projectPath + "\\res\\values-{0}\\";

@@ -37,8 +37,17 @@ public class FileUpLoad {
 			con = (HttpURLConnection) url.openConnection();
 			con.setDoInput(true);
 			con.setDoOutput(true);
+			// Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+			// Content-Type: multipart/form-data;
+			// boundary=----moxieboundary1456821623670
+			// User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; Android SDK
+			// built for x86_64 Build/MASTER)
+			// Host: 114.241.205.122:8086
+			// Accept-Encoding: gzip
+			// Content-Length: 23659
 			con.setRequestMethod("POST");
 			con.setRequestProperty("Connection", "Keep-Alive");
+			con.setRequestProperty("Referer", "http://hehe");
 			con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 			DataOutputStream ds = new DataOutputStream(con.getOutputStream());
 			for (int j = 0; j < forms.size(); j++) {
@@ -120,7 +129,6 @@ public class FileUpLoad {
 		public ContentType contentType;
 		public String content;
 		public String[][] parameterPairs;
-		public String boundary;
 
 		/**
 		 * 
@@ -133,9 +141,7 @@ public class FileUpLoad {
 		 * @param parameterPairs
 		 *            表单条目的键值对 new String[] {key,value}
 		 */
-		public FormBean(String boundary, ContentType contentType, String content,
-				String[]... parameterPairs) {
-			this.boundary = boundary;
+		public FormBean(ContentType contentType, String content, String[]... parameterPairs) {
 			this.contentType = contentType;
 			this.content = content;
 			this.parameterPairs = parameterPairs;
